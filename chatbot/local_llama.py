@@ -1,6 +1,7 @@
 from langchain_openai import ChatOpenAI
-from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.prompts import ChatPromptTemplate, prompt
 from langchain_core.output_parsers import StrOutputParser
+from langchain_community.llms import Ollama
 
 import streamlit as st
 import os
@@ -16,27 +17,24 @@ os.environ["LANGCHAIN_TRACING_V2"] = "true"
 os.environ["LANGCHAIN_API_KEY"]=os.getenv("LANGCHAIN_API_KEY")
 
 # Prompt template
-prompt = ChatPromptTemplate.from_messages(
-    [
-        ("system" , "Please respond to the user queries"),
-        ("user", "Question:{question}")
-    ]
-)
+prompt = ChatPromptTemplate.from_messages([
+    ("system" , "Please respond to the user queries"),
+    ("user", "Question:{question}")
+])
 
 # Initialize the streamlit framework
-st.title("Langchain demo with OpenAI")
+st.title("Langchain demo with llama2")
 input_text = st.text_input("Search for a topic")
 
-# Define the Open AI model
-open_ai_llm = ChatOpenAI(model="gpt-3.5-turbo")
+# Define the LLM model
+llm = Ollama(model="llama2")
 
-# Define the output parser
+# Output parser
 output_parser = StrOutputParser()
 
 # Define the chain
-chain = prompt | open_ai_llm | output_parser
+chain = prompt | llm | output_parser
 
 # Write the response
 if input_text:
     st.write(chain.invoke({"question":input_text}))
-
