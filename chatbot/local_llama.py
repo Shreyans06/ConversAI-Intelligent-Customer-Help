@@ -1,3 +1,4 @@
+from json import load
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate, prompt
 from langchain_core.output_parsers import StrOutputParser
@@ -6,6 +7,8 @@ from langchain_community.llms import Ollama
 import streamlit as st
 import os
 from dotenv import load_dotenv
+
+load_dotenv()
 
 # OPEN AI API Key
 os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
