@@ -1,11 +1,14 @@
 import requests
 import streamlit as st
 
+
 def get_llm_response(input_text):
 
     try:
         # Send a POST request to the LangChain Server
-        response = requests.post("http://localhost:8000/essay/invoke", json={'input': {'topic': input_text}})
+        response = requests.post(
+            "http://localhost:8000/essay/invoke", json={"input": {"topic": input_text}}
+        )
 
         # Check if the request was successful
         response.raise_for_status()
@@ -17,9 +20,8 @@ def get_llm_response(input_text):
     except ValueError:
         print("Eroor: Unable to decode JSON response")
         return None
-    
 
-    return response.json()['output']['content']
+    return response.json()["output"]
 
 
 st.title("LangChain Demo with llama2 API")
