@@ -7,3 +7,11 @@ langserve
 fastapi
 uvicorn
 sse_starlette
+ipykernel
+bs4
+pypdf
+chromadb
+faiss-cpu
+arxiv
+wikipedia
+langchainhub
