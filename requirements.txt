@@ -17,4 +17,4 @@ wikipedia
 langchainhub
 groq
 langchain-groq
-
+sentence_transformers
