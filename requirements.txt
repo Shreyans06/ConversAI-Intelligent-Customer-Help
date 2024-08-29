@@ -19,3 +19,4 @@ groq
 langchain-groq
 sentence_transformers
 langchain-huggingface
+langchain-objectbox
