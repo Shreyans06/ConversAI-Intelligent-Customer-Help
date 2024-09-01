@@ -20,3 +20,4 @@ langchain-groq
 sentence_transformers
 langchain-huggingface
 langchain-objectbox
+langchain_google_genai
