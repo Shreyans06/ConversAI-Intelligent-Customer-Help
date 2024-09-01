@@ -21,3 +21,7 @@ sentence_transformers
 langchain-huggingface
 langchain-objectbox
 langchain_google_genai
+pinecone-client
+pinecone-text
+pinecone-notebooks
+nltk
