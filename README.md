@@ -1,4 +1,4 @@
-### LangChain Demo: Generative AI-powered Chatbot with RAG Pipelines
+### ConversAI: Intelligent Customer Help
 This repository showcases a Generative AI-powered chatbot built using LangChain, Retrieval-Augmented Generation (RAG) pipelines, GEMMA models, and Hugging Face integrations. It also utilizes different vector stores for efficient document retrieval
 
 ### Features
